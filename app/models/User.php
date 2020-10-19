@@ -10,9 +10,9 @@
     public function register($data){
       $this->db->query('INSERT INTO users (name, email, password) VALUES(:name, :email, :password)');
       // Bind values
-      $this->db->bind(':name', $data['name']);
-      $this->db->bind(':email', $data['email']);
-      $this->db->bind(':password', $data['password']);
+      $this->db->bind(':name', $data['register-name']);
+      $this->db->bind(':email', $data['register-email']);
+      $this->db->bind(':password', $data['register-password']);
 
       // Execute
       if($this->db->execute()){
