@@ -11,7 +11,7 @@
 
     public function index(){
       // Get posts
-      $posts = $this->postModel->getPosts();
+      $posts = $this->postModel->getPosts($_SESSION['user_id']);
 
       $data = [
         'posts' => $posts
