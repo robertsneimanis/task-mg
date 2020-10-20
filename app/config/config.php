@@ -8,8 +8,8 @@
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/shareposts');
+  define('URLROOT', 'http://localhost/magebit');
   // Site Name
-  define('SITENAME', 'SharePosts');
+  define('SITENAME', 'magebit');
   // App Version
   define('APPVERSION', '1.0.0');
