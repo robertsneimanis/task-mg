@@ -5,21 +5,28 @@
     <h1>Posts</h1>
   </div>
   <div class="col-md-6">
-    <a href="<?= URLROOT; ?>/posts/add" class="btn btn-primary pull-right">
-      <i class="fa fa-pencil"></i> Add Post
-    </a>
+    <a href="<?= URLROOT; ?>/posts/add" class="btn btn-primary pull-right">Add Attribute</a>
   </div>
 </div>
 
-<?php foreach($data['posts'] as $post) : ?>
-    <div class="card card-body mb-3">
-      <h4 class="card-title"><?= $post->title; ?></h4>
-      <div class="bg-light p-2 mb-3">
-        Written on <?= $post->created_at; ?>
-      </div>
-      <p class="card-text"><?= $post->body; ?></p>
-      <a href="<?= URLROOT; ?>/posts/show/<?= $post->id; ?>" class="btn btn-dark">More</a>
-    </div>
+<table style="width:50%">
+  <tr>
+    <th>Attribute</th>
+    <th>value</th>
+    <th></th>
+  </tr>
+  <?php foreach($data['posts'] as $post) : ?>
+    <tr>
+      <td><?= $post->title; ?></td>
+      <td><?= $post->body; ?></td>
+      <td>
+        <a href="<?= URLROOT; ?>/posts/edit/<?= $post->id; ?>" class="btn btn-dark">Edit</a>
+        <form class="pull-right" action="<?= URLROOT; ?>/posts/delete/<?= $post->id; ?>" method="post">
+          <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
+      </td>
+    </tr>
   <?php endforeach; ?>
+</table>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
