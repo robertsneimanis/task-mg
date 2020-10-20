@@ -2,7 +2,7 @@
 <?php flash('post_message'); ?>
 <div class="row mb-3">
   <div class="col-md-6">
-    <h1>Posts</h1>
+    <h1>Attributes</h1>
   </div>
   <div class="col-md-6">
     <a href="<?= URLROOT; ?>/posts/add" class="btn btn-primary pull-right">Add Attribute</a>
