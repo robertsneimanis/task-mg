@@ -120,18 +120,6 @@
       }
     }
 
-    public function show($id){
-      $post = $this->postModel->getPostById($id);
-      $user = $this->userModel->getUserById($post->user_id);
-
-      $data = [
-        'post' => $post,
-        'user' => $user
-      ];
-
-      $this->view('posts/show', $data);
-    }
-
     public function delete($id){
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Get existing post from model

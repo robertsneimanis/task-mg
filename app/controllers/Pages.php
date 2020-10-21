@@ -10,7 +10,7 @@
       }
 
       $data = [
-        'title' => 'SharePosts',
+        'title' => 'Magebit',
         'description' => 'Simple social network built on the TraversyMVC PHP framework'
       ];
      
