@@ -170,7 +170,7 @@
       $_SESSION['user_id'] = $user->id;
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
-      redirect('posts');
+      redirect('attributes');
     }
 
     public function logout(){
