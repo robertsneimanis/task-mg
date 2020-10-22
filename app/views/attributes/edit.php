@@ -5,12 +5,12 @@
     <p>Create a attribute with this form</p>
     <form action="<?= URLROOT; ?>/attributes/edit/<?= $data['id']; ?>" method="post">
       <div class="form-group">
-        <label for="title">Title: <sup>*</sup></label>
+        <label for="title">Attribute: <sup>*</sup></label>
         <input type="text" name="title" class="form-control form-control-lg <?= (!empty($data['title_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['title']; ?>">
         <span class="invalid-feedback"><?= $data['title_err']; ?></span>
       </div>
       <div class="form-group">
-        <label for="body">Body: <sup>*</sup></label>
+        <label for="body">Value: <sup>*</sup></label>
         <textarea name="body" class="form-control form-control-lg <?= (!empty($data['body_err'])) ? 'is-invalid' : ''; ?>"><?= $data['body']; ?></textarea>
         <span class="invalid-feedback"><?= $data['body_err']; ?></span>
       </div>
