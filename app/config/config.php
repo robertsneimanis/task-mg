@@ -10,6 +10,4 @@
   // URL Root
   define('URLROOT', 'http://localhost/magebit');
   // Site Name
-  define('SITENAME', 'magebit');
-  // App Version
-  define('APPVERSION', '1.0.0');
+  define('SITENAME', 'Magebit');

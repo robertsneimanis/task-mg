@@ -3,7 +3,6 @@
 <?php flash('register_success'); ?>
 
 <form action="<?= URLROOT; ?>/users/index" method="post">
-
     <label for="email">Email: <sup>*</sup></label>
     <input type="email" name="email"
         class="form-control form-control-lg <?= (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>"
@@ -17,7 +16,6 @@
     <span class="invalid-feedback"><?= $data['password_err']; ?></span>
 
     <button type="submit" name="login" class="btn btn-success btn-block">Login</button>
-
 </form>
 
 <form action="<?= URLROOT; ?>/users/index" method="post">
