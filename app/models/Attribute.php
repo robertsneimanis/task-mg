@@ -1,12 +1,12 @@
 <?php
-  class Post {
+  class Attribute {
     private $db;
 
     public function __construct(){
       $this->db = new Database;
     }
 
-    public function getPosts($user_id){
+    public function getAttributes($user_id){
       $this->db->query('SELECT * FROM attributes WHERE user_id = :user_id');
       $this->db->bind(':user_id', $user_id);
 
@@ -15,7 +15,7 @@
       return $results;
     }
 
-    public function addPost($data){
+    public function addAttribute($data){
       $this->db->query('INSERT INTO attributes (title, user_id, body) VALUES(:title, :user_id, :body)');
       // Bind values
       $this->db->bind(':title', $data['title']);
@@ -30,7 +30,7 @@
       }
     }
 
-    public function updatePost($data){
+    public function updateAttribute($data){
       $this->db->query('UPDATE attributes SET title = :title, body = :body WHERE id = :id');
       // Bind values
       $this->db->bind(':id', $data['id']);
@@ -45,7 +45,7 @@
       }
     }
 
-    public function getPostById($id){
+    public function getAttributeById($id){
       $this->db->query('SELECT * FROM attributes WHERE id = :id');
       $this->db->bind(':id', $id);
 
@@ -54,7 +54,7 @@
       return $row;
     }
 
-    public function deletePost($id){
+    public function deleteAttribute($id){
       $this->db->query('DELETE FROM attributes WHERE id = :id');
       // Bind values
       $this->db->bind(':id', $id);

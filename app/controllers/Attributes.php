@@ -1,23 +1,23 @@
 <?php
-  class Posts extends Controller {
+  class Attributes extends Controller {
     public function __construct(){
       if(!isLoggedIn()){
         redirect('users/login');
       }
 
-      $this->postModel = $this->model('Post');
+      $this->attributeModel = $this->model('Attribute');
       $this->userModel = $this->model('User');
     }
 
     public function index(){
-      // Get posts
-      $posts = $this->postModel->getPosts($_SESSION['user_id']);
+      // Get attributes
+      $attributes = $this->attributeModel->getAttributes($_SESSION['user_id']);
 
       $data = [
-        'posts' => $posts
+        'attributes' => $attributes
       ];
 
-      $this->view('posts/index', $data);
+      $this->view('attributes/index', $data);
     }
 
     public function add(){
@@ -35,24 +35,24 @@
 
         // Validate data
         if(empty($data['title'])){
-          $data['title_err'] = 'Please enter title';
+          $data['title_err'] = 'Please enter attribute title';
         }
         if(empty($data['body'])){
-          $data['body_err'] = 'Please enter body text';
+          $data['body_err'] = 'Please enter attribute value';
         }
 
         // Make sure no errors
         if(empty($data['title_err']) && empty($data['body_err'])){
           // Validated
-          if($this->postModel->addPost($data)){
-            flash('post_message', 'Post Added');
-            redirect('posts');
+          if($this->attributeModel->addAttribute($data)){
+            flash('attribute_message', 'Attribute Added');
+            redirect('attributes');
           } else {
             die('Something went wrong');
           }
         } else {
           // Load view with errors
-          $this->view('posts/add', $data);
+          $this->view('attributes/add', $data);
         }
 
       } else {
@@ -61,7 +61,7 @@
           'body' => ''
         ];
   
-        $this->view('posts/add', $data);
+        $this->view('attributes/add', $data);
       }
     }
 
@@ -90,54 +90,54 @@
         // Make sure no errors
         if(empty($data['title_err']) && empty($data['body_err'])){
           // Validated
-          if($this->postModel->updatePost($data)){
-            flash('post_message', 'Post Updated');
-            redirect('posts');
+          if($this->attributeModel->updateAttribute($data)){
+            flash('attribute_message', 'Attribute Updated');
+            redirect('attributes');
           } else {
             die('Something went wrong');
           }
         } else {
           // Load view with errors
-          $this->view('posts/edit', $data);
+          $this->view('attributes/edit', $data);
         }
 
       } else {
-        // Get existing post from model
-        $post = $this->postModel->getPostById($id);
+        // Get existing attribute from model
+        $attribute = $this->attributeModel->getAttributeById($id);
 
         // Check for owner
-        if($post->user_id != $_SESSION['user_id']){
-          redirect('posts');
+        if($attribute->user_id != $_SESSION['user_id']){
+          redirect('attributes');
         }
 
         $data = [
           'id' => $id,
-          'title' => $post->title,
-          'body' => $post->body
+          'title' => $attribute->title,
+          'body' => $attribute->body
         ];
   
-        $this->view('posts/edit', $data);
+        $this->view('attributes/edit', $data);
       }
     }
 
     public function delete($id){
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        // Get existing post from model
-        $post = $this->postModel->getPostById($id);
+        // Get existing attribute from model
+        $attribute = $this->attributeModel->getAttributeById($id);
         
         // Check for owner
-        if($post->user_id != $_SESSION['user_id']){
-          redirect('posts');
+        if($attribute->user_id != $_SESSION['user_id']){
+          redirect('attributes');
         }
 
-        if($this->postModel->deletePost($id)){
-          flash('post_message', 'Post Removed');
-          redirect('posts');
+        if($this->attributeModel->deleteAttribute($id)){
+          flash('attribute_message', 'Attribute Removed');
+          redirect('attributes');
         } else {
           die('Something went wrong');
         }
       } else {
-        redirect('posts');
+        redirect('attributes');
       }
     }
   }

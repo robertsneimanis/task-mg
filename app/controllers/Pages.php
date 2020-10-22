@@ -6,7 +6,7 @@
     
     public function index(){
       if(isLoggedIn()){
-        redirect('posts');
+        redirect('attributes');
       }
 
       $data = [
@@ -20,7 +20,7 @@
     public function about(){
       $data = [
         'title' => 'About Us',
-        'description' => 'App to share posts with other users'
+        'description' => 'App to share attributes with other users'
       ];
 
       $this->view('pages/about', $data);
