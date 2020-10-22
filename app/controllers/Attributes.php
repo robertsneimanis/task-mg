@@ -35,7 +35,7 @@
 
         // Validate data
         if(empty($data['attribute'])){
-          $data['attribute_err'] = 'Please enter attribute attribute';
+          $data['attribute_err'] = 'Please enter attribute';
         }
         if(empty($data['value'])){
           $data['value_err'] = 'Please enter attribute value';
