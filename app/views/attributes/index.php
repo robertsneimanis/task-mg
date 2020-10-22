@@ -17,8 +17,8 @@
   </tr>
   <?php foreach($data['attributes'] as $attribute) : ?>
   <tr>
-    <td><?= $attribute->title; ?></td>
-    <td><?= $attribute->body; ?></td>
+    <td><?= $attribute->attribute; ?></td>
+    <td><?= $attribute->value; ?></td>
     <td>
       <a href="<?= URLROOT; ?>/attributes/edit/<?= $attribute->id; ?>" class="btn btn-dark">Edit</a>
       <form class="pull-right" action="<?= URLROOT; ?>/attributes/delete/<?= $attribute->id; ?>" method="post">
