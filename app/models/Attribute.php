@@ -16,11 +16,11 @@
     }
 
     public function addAttribute($data){
-      $this->db->query('INSERT INTO attributes (title, user_id, body) VALUES(:title, :user_id, :body)');
+      $this->db->query('INSERT INTO attributes (attribute, user_id, value) VALUES(:attribute, :user_id, :value)');
       // Bind values
-      $this->db->bind(':title', $data['title']);
+      $this->db->bind(':attribute', $data['attribute']);
       $this->db->bind(':user_id', $data['user_id']);
-      $this->db->bind(':body', $data['body']);
+      $this->db->bind(':value', $data['value']);
 
       // Execute
       if($this->db->execute()){
@@ -31,11 +31,11 @@
     }
 
     public function updateAttribute($data){
-      $this->db->query('UPDATE attributes SET title = :title, body = :body WHERE id = :id');
+      $this->db->query('UPDATE attributes SET attribute = :attribute, value = :value WHERE id = :id');
       // Bind values
       $this->db->bind(':id', $data['id']);
-      $this->db->bind(':title', $data['title']);
-      $this->db->bind(':body', $data['body']);
+      $this->db->bind(':attribute', $data['attribute']);
+      $this->db->bind(':value', $data['value']);
 
       // Execute
       if($this->db->execute()){
