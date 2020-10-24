@@ -12,10 +12,9 @@
     </div>
     <div class="form-group">
       <label for="value">Value: <sup>*</sup></label>
-      <textarea name="value"
-        class="form-control form-control-lg <?= (!empty($data['value_err'])) ? 'is-invalid' : ''; ?>">
-        <?= $data['value']; ?>
-      </textarea>
+      <input type="text" name="value"
+        class="form-control form-control-lg <?= (!empty($data['value_err'])) ? 'is-invalid' : ''; ?>"
+        value="<?= $data['value']; ?>">
       <span class="invalid-feedback"><?= $data['value_err']; ?></span>
     </div>
     <input type="submit" class="btn btn-success" value="Submit">
