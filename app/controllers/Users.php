@@ -20,11 +20,9 @@
           'register-name' => '',
           'register-email' => '',
           'register-password' => '',
-          'register-confirm_password' => '',
           'register-name_err' => '',
           'register-email_err' => '',
-          'register-password_err' => '',
-          'register-confirm_password_err' => ''
+          'register-password_err' => ''
         ];
 
         // Validate Email
@@ -81,11 +79,9 @@
           'register-name' => trim($_POST['register-name']),
           'register-email' => trim($_POST['register-email']),
           'register-password' => trim($_POST['register-password']),
-          'register-confirm_password' => trim($_POST['register-confirm_password']),
           'register-name_err' => '',
           'register-email_err' => '',
-          'register-password_err' => '',
-          'register-confirm_password_err' => ''
+          'register-password_err' => ''
         ];
 
         // Validate Email
@@ -110,17 +106,8 @@
           $data['register-password_err'] = 'Password must be at least 6 characters';
         }
 
-        // Validate Confirm Password
-        if(empty($data['register-confirm_password'])){
-          $data['register-confirm_password_err'] = 'Please confirm password';
-        } else {
-          if($data['register-password'] != $data['register-confirm_password']){
-            $data['register-confirm_password_err'] = 'Passwords do not match';
-          }
-        }
-
         // Make sure errors are empty
-        if(empty($data['register-email_err']) && empty($data['register-name_err']) && empty($data['register-password_err']) && empty($data['register-confirm_password_err'])){
+        if(empty($data['register-email_err']) && empty($data['register-name_err']) && empty($data['register-password_err'])){
           // Validated
           
           // Hash Password
@@ -151,11 +138,9 @@
           'register-name' => '',
           'register-email' => '',
           'register-password' => '',
-          'register-confirm_password' => '',
           'register-name_err' => '',
           'register-email_err' => '',
-          'register-password_err' => '',
-          'register-confirm_password_err' => ''        
+          'register-password_err' => ''
         ];
 
         // Load view

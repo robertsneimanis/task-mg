@@ -37,12 +37,6 @@
         value="<?= $data['register-password']; ?>">
     <span class="invalid-feedback"><?= $data['register-password_err']; ?></span>
 
-    <label for="confirm_password">Confirm Password: <sup>*</sup></label>
-    <input type="password" name="register-confirm_password"
-        class="form-control form-control-lg <?= (!empty($data['register-confirm_password_err'])) ? 'is-invalid' : ''; ?>"
-        value="<?= $data['register-confirm_password']; ?>">
-    <span class="invalid-feedback"><?= $data['register-confirm_password_err']; ?></span>
-
     <button type="submit" name="register" class="main-button form-button">Register</button>
 </form>
 
