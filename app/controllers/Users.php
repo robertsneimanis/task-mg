@@ -29,7 +29,7 @@
 
         // Validate Email
         if(empty($data['email'])){
-          $data['email_err'] = 'Pleae enter email';
+          $data['email_err'] = 'Please enter email';
         }
 
         // Validate Password
@@ -67,10 +67,7 @@
 
         // register start here ===============================================================================
       } if(isset($_POST['register'])){
-        // die('register was pressed')
         // Process form
-
-        print_r($_POST);
   
         // Sanitize POST data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -93,7 +90,7 @@
 
         // Validate Email
         if(empty($data['register-email'])){
-          $data['register-email_err'] = 'Pleae enter email';
+          $data['register-email_err'] = 'Plesae enter email';
         } else {
           // Check email
           if($this->userModel->findUserByEmail($data['register-email'])){
@@ -103,19 +100,19 @@
 
         // Validate Name
         if(empty($data['register-name'])){
-          $data['register-name_err'] = 'Pleae enter name';
+          $data['register-name_err'] = 'Please enter name';
         }
 
         // Validate Password
         if(empty($data['register-password'])){
-          $data['register-password_err'] = 'Pleae enter password';
+          $data['register-password_err'] = 'Please enter password';
         } elseif(strlen($data['register-password']) < 6){
           $data['register-password_err'] = 'Password must be at least 6 characters';
         }
 
         // Validate Confirm Password
         if(empty($data['register-confirm_password'])){
-          $data['register-confirm_password_err'] = 'Pleae confirm password';
+          $data['register-confirm_password_err'] = 'Please confirm password';
         } else {
           if($data['register-password'] != $data['register-confirm_password']){
             $data['register-confirm_password_err'] = 'Passwords do not match';

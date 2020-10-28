@@ -15,7 +15,7 @@
         value="<?= $data['password']; ?>">
     <span class="invalid-feedback"><?= $data['password_err']; ?></span>
 
-    <button type="submit" name="login" class="btn btn-success btn-block">Login</button>
+    <button type="submit" name="login" class="main-button form-button">Login</button>
 </form>
 
 <form action="<?= URLROOT; ?>/users/index" method="post">
@@ -43,7 +43,7 @@
         value="<?= $data['register-confirm_password']; ?>">
     <span class="invalid-feedback"><?= $data['register-confirm_password_err']; ?></span>
 
-    <button type="submit" name="register" class="btn btn-success btn-block">Register</button>
+    <button type="submit" name="register" class="main-button form-button">Register</button>
 </form>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

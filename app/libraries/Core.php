@@ -11,8 +11,6 @@
     protected $params = [];
 
     public function __construct(){
-      //print_r($this->getUrl());
-
       $url = $this->getUrl();
 
       // Look in controllers for first value
