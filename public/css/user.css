@@ -1,0 +1,254 @@
+.login-bg {
+    background-image: url("../public/images/bg-image.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 600px;
+    background-size: cover;
+    position: relative;
+    -webkit-animation: zoom 60s infinite;
+    animation: zoom 60s infinite;
+}
+
+.content-wrapper {
+    background-color: rgba(15, 26, 47, 0.9);
+    height: 420px;
+    width: 920px;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.content-column {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 100px;
+    padding-right: 80px;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+}
+
+.content-column:first-child {
+    padding-left: 80px;
+    padding-right: 100px;
+}
+
+.form-container {
+    -webkit-box-shadow: 0px 0px 140px 0px rgba(50, 66, 91, 0.3);
+    -moz-box-shadow: 0px 0px 140px 0px rgba(50, 66, 91, 0.3);
+    box-shadow: 0px 0px 140px 0px rgba(50, 66, 91, 0.3);
+    background-color: #fff;
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 460px;
+    height: 460px;
+    color: #3e495e;
+    padding-left: 90px;
+    padding-right: 90px;
+    transition: all 0.5s linear;
+    display: flex;
+    justify-content: center;
+}
+
+.side-bg {
+    margin-top: 20px;
+    background-color: #20293a;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 420px;
+    min-width: 10px;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: -10px;
+}
+
+.side-bg::before {
+    content: "";
+    height: 20px;
+    width: 10px;
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    background: linear-gradient(to bottom right, transparent 0%, transparent 50%, #89deff 50%, #89deff 100%);
+}
+
+.side-bg::after {
+    content: "";
+    height: 20px;
+    width: 10px;
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    background: linear-gradient(to top right, transparent 0%, transparent 50%, #89deff 50%, #89deff 100%);
+}
+
+#register-form,
+#login-form {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 280px;
+}
+
+.form-container h3 {
+    display: inline-block;
+}
+
+.form-container img {
+    float: right;
+}
+
+.show-register {
+    right: 440px;
+}
+
+.logo {
+    height: 28px;
+    width: auto;
+}
+
+.forgot-password {
+    float: right;
+    margin-top: 19px;
+    color: #8495b7;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #8495b7;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+@media (max-width: 1199px) {
+    .login-bg {
+        min-height: 600px;
+    }
+
+    .content-wrapper {
+        width: 720px;
+        top: 50px;
+        left: 50%;
+        -ms-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);
+    }
+
+    .form-container {
+        width: 360px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .show-register {
+        right: 340px;
+    }
+
+    .content-column {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .content-column:first-child {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content-wrapper {
+        width: 550px;
+    }
+
+    .form-container {
+        width: 260px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .show-register {
+        right: 260px;
+    }
+}
+
+@media (max-width: 575px) {
+    .login-bg {
+        height: auto;
+        min-height: auto;
+    }
+
+    .content-wrapper {
+        top: 0;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .content-wrapper {
+        width: 100%;
+        height: 100%;
+        display: block;
+        height: auto;
+    }
+
+    .content-column {
+        max-width: 100%;
+        padding-bottom: 50px;
+    }
+
+    .side-bg {
+        display: none;
+    }
+
+    .form-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        height: auto;
+        display: block;
+        position: relative;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    #login-form,
+    #register-form {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 50px;
+    }
+
+    footer {
+        text-align: center;
+        display: block;
+        left: 0;
+        right: 0;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoom {
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 120%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
